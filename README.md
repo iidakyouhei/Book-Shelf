@@ -1,24 +1,46 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false, unique:true|
+|password|string|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :files dependent: :destroy
+- has_many :histories dependent: :destroy
 
-* Ruby version
+## filesテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|url|string|null: false|
 
-* Configuration
+### Association
+- has_many :histories dependent: :destroy
+- belongs_to :user
 
-* Database creation
+## historiesテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|file_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :file
 
-* Services (job queues, cache servers, search engines, etc.)
+## tagsテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|file_id|references|null: false, foreign_key: true|
+|TagName_id|integer|null: false, foreign_key: true|
+|TagData_id|integer|null: false, foreign_key: true|
 
-* ...
+### Association
+- belongs_to :file
+- belongs_to_active_hash :TagName
+- belongs_to_active_hash :TagData

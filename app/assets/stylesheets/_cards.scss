@@ -1,0 +1,86 @@
+.header{
+  background-color: #fdfdfd;
+  width: 100vw;
+  height: 80px;
+  &__top{
+    display: flex;
+    align-items: center;
+  }
+
+  .title{
+    margin-top: 20px;
+    margin-left: 100px;
+    font-size: 30px;
+    font-family: serif;
+    color: #006400;
+  }
+  .function{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    &__list{
+      display: flex;
+      align-items: center;
+      li{
+        margin-left:20px;
+      }
+    }
+  }
+
+}
+.main{
+  background-color: #f2f2f2;
+  height: calc(100vh - 180px);
+  &__top{
+    padding: 20px 300px;
+  }
+}
+
+.card-display{
+  height: calc(100vh - 300px);;
+  &__box{
+    display: flex;
+    margin: 0 300px;
+    justify-content: space-around;
+  }
+}
+
+.footer{
+  background-color: #f2f2f2;
+  width: 100vw;
+  height: 100px;
+}
+
+.footer{
+  text-align: center;
+  color: #9f9f9f;
+  font-family: serif;
+}
+
+.Search{
+  margin-left: auto;
+  width: 100%;
+  .Form__contents{
+    width: 100%;
+    display: flex;
+    margin-bottom: 5px;
+    .Form__inputText{
+      width: calc(100% - 26px);
+      height: 36px;
+      padding: 0 0 0 5px;
+    }
+    .Search__btn{
+      width: 36px;
+      border: 0;
+      cursor: pointer;
+      background-color:#00a381;
+      padding: 8px;
+      &--icon{
+        width: 100%;
+        vertical-align: bottom;
+      }
+    }
+  }
+}
+

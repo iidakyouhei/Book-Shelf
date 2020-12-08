@@ -6,7 +6,7 @@
       %ul.function__list
         %li
           = link_to 'ログイン',user_session_path
-
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
         %li 
           = link_to '新規ユーザ', new_user_session_path
         %li 新規文書登録

@@ -32,43 +32,60 @@
 .main{
   background-color: #f2f2f2;
   height: calc(100vh - 180px);
-  &__top{
-    padding: 20px 300px;
-  }
 }
 
 .card-display{
-  height: calc(100vh - 300px);;
+  height: calc(100vh - 300px);
+  padding-top: 50px;
   &__box{
     display: flex;
-    margin: 0 300px;
     justify-content: space-around;
   }
+  &__box li{
+    display: inline;
+
+  }
+  &__box li a{
+    display: inline-block;
+    background: #006400;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+  }
+  &__box li a:hover,
+  &__box li a.active{
+    background: #ddd;
+    color: #333;
+  }
+}
+.contents {
+  padding: 20px;
+
 }
 
 .footer{
   background-color: #f2f2f2;
   width: 100vw;
   height: 100px;
-}
-
-.footer{
   text-align: center;
   color: #9f9f9f;
   font-family: serif;
 }
 
 .Search{
-  margin-left: auto;
-  width: 100%;
+  margin: auto;
+  margin-bottom: 5px;
+  width: 800px;
   .Form__contents{
     width: 100%;
     display: flex;
-    margin-bottom: 5px;
     .Form__inputText{
-      width: calc(100% - 26px);
       height: 36px;
       padding: 0 0 0 5px;
+      width: 500px;
     }
     .Search__btn{
       width: 36px;

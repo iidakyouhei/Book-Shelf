@@ -1,33 +1,47 @@
+
+
+
 .header
   .header__top
     .title
       File-Shelf
-    .function
-      %ul.function__list
-        %li
-          = link_to 'ログイン',user_session_path
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
-        %li 
-          = link_to '新規ユーザ', new_user_session_path
-        %li 新規文書登録
-
-
-.main
-  .main__top
     .Search
       %form.Form__contents
         %input.Form__inputText{placeholder: "キーワードから探す", type: "search"}
         %button.Search__btn{type: "submit"}
           = image_tag '', class: 'Search__btn--icon'
+    .function
+
+      %ul.function__list
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
+        %li 新規文書登録
+
+
+.main
   .card-display
     %ul.card-display__box
-      %li.card-display__box--History
-        文書種類
-      %li.card-display__box--History
-        登録者
-      %li.card-display__box__new
+      %li
+        %a{href: "#content01"} Ruby
+      %li
+        %a{href: "#content02"} AWS
+      %li
+        %a{href:"#content03"} 転職
+      %li
+        %a{href: "#content04"} 新着文書
+      %li
+        %a{href: "#content05"} 履歴
+    .contents
+      #content01
+        Ruby
+      #content02
+        AWS
+      #content03
+        転職
+      #content04
         新着文書
-      %li.card-display__box--History
+      #content05
         履歴
+
 .footer
   FileーShelf

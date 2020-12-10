@@ -1,0 +1,55 @@
+.Tags
+  %ul.tabs
+    %li.tabs__item.color1
+      %h2
+        Tony
+        %span Romo
+      %p.tabs__num 9
+      %p.tabs__stats
+
+    %li.tabs__item.color2
+      %h2
+        Aaron
+        %span Rodgers
+      %p.tabs__num 12
+      %p.tabs__stats
+        Height: 6-2, Weight: 225, College: California
+    %li.tabs__item.color3
+      %h2
+        Ben
+        %span Roethlisberger
+      %p.tabs__num 7
+      %p.tabs__stats
+        Height: 6-5, Weight: 241, College: Miami, OH
+    %li.tabs__item.color4
+      %h2
+        Peyton
+        %span Manning
+      %p.tabs__num 18
+      %p.tabs__stats
+        Height: 6-5, Weight: 230, College: Tennessee
+    %li.tabs__item.color5
+      %h2
+        Tom
+        %span Brady
+      %p.tabs__num 12
+      %p.tabs__stats
+        Height: 6-4, Weight: 225, College: Michigan
+    %li.tabs__item.color6
+      %h2
+        Drew
+        %span Brees
+      %p.tabs__num 9
+      %p.tabs__stats
+        .function
+          %ul.function__list
+            %li
+              = link_to 'ログイン',user_session_path
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
+            %li 
+              = link_to '新規ユーザ', new_user_session_path
+            %li 新規文書登録
+    .views-toggle.views-toggle--hidden
+      %svg{:fill => "white", :viewbox => "0 0 24 24"}
+        %path{:d => "M16.59 8.59l-4.59 4.58-4.59-4.58-1.41 1.41 6 6 6-6z"}
+        %path{:d => "M0 0h24v24h-24z", :fill => "none"}

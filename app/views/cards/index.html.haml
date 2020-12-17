@@ -15,16 +15,17 @@
       %ul.function__list
         %li
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
-        %li 新規文書登録
+        %li 
+          = link_to "新規文書登録", new_card_path, class: 'Button'
 
 
 .main
   .card-display
     %ul.card-display__box
       %li
-        %a{href: "#content01"} Ruby
+        %a{href: "#content01"} プログラミング
       %li
-        %a{href: "#content02"} AWS
+        %a{href: "#content02"} インフラ
       %li
         %a{href:"#content03"} 転職
       %li

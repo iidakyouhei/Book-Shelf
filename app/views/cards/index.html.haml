@@ -23,26 +23,62 @@
   .card-display
     %ul.card-display__box
       %li
-        %a{href: "#content01"} プログラミング
+        %a{href: "#content01"} 新着文書
       %li
         %a{href: "#content02"} インフラ
       %li
-        %a{href:"#content03"} 転職
+        %a{href: "#content03"} 転職
       %li
-        %a{href: "#content04"} 新着文書
+        %a{href: "#content04"} プログラミング
       %li
-        %a{href: "#content05"} 履歴
+        %a{href: "#content05"} 画像
     .contents
       #content01
-        Ruby
+        .ProductLists
+          - @cards.each do |card|
+            .ProductList
+              =link_to card_path(card.id) do
+                .ProductList__body
+                  %h3.type
+                    = card.type.name
+                  %h3.name
+                    = card.title
+                  %h3.user
+                    = card.user.name
+
+
       #content02
-        AWS
+        .ProductLists
+          - @cards_i.each do |card|
+            .ProductList
+              =link_to card_path(card.id) do
+                .ProductList__body
+                  %h3.name
+                    = card.title
       #content03
-        転職
+        .ProductLists
+          - @cards_t.each do |card|
+            .ProductList
+              =link_to card_path(card.id) do
+                .ProductList__body
+                  %h3.name
+                    = card.title
       #content04
-        新着文書
+        .ProductLists
+          - @cards_p.each do |card|
+            .ProductList
+              =link_to card_path(card.id) do
+                .ProductList__body
+                  %h3.name
+                    = card.title
       #content05
-        履歴
+        .ProductLists
+          - @cards_g.each do |card|
+            .ProductList
+              =link_to card_path(card.id) do
+                .ProductList__body
+                  %h3.name
+                    = card.title
 
 .footer
   FileーShelf

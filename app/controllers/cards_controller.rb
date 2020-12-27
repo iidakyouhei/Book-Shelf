@@ -32,7 +32,7 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:title, :url, :free, :type_id).merge(user_id: current_user.id)
+    params.require(:card).permit(:title, :image, :text, :type_id).merge(user_id: current_user.id)
   end
 
 end

@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 2020_11_14_050600) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.text "url", null: false
+    t.text "image", null: false
     t.string "title", null: false
     t.integer "type_id", null: false
-    t.string "free"
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_cards_on_user_id"

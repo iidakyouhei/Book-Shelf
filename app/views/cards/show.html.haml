@@ -1,1 +1,15 @@
 = image_tag @card.image.url
+.Table
+  %table
+    %tr
+      %th 出品者
+      %td
+        = @card.user.name
+      %tr
+        %th ブランド
+        %td 
+          = @card.title
+      %tr
+        %th 商品の状態
+        %td 
+          =@card.text

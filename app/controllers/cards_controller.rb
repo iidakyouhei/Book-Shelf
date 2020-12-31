@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :move_to_index_destroy, only: [:destroy]
 
   def index
     @cards = Card.order('created_at DESC').limit(30)
@@ -22,13 +23,30 @@ class CardsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @card = Card.find(params[:id])
+    @user = User.find(@card.user_id)
 
   end
-  def show_image
-    @image = Card.find(params[:id])
-    # send_data @image.url, :type => 'image/jpeg', :disposition => 'inline'
+
+  def edit
+    @card = Card.find(params[:id])
+  end
+  
+  def update
+    @card = Card.find(params[:id])
+    if @card.update(card_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @card.destroy
+       redirect_to root_path
+    else
+      render :edit
+    end
   end
   private
 
@@ -37,4 +55,8 @@ class CardsController < ApplicationController
     params.require(:card).permit(:title, :image, :text, :type_id).merge(user_id: current_user.id)
   end
 
+  def move_to_index_destroy
+    @card = Card.find(params[:id])
+    redirect_to root_path unless current_user.id == @card.user_id
+  end
 end

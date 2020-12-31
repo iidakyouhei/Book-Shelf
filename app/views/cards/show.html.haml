@@ -2,6 +2,13 @@
   .main__zoon
     .content
       = image_tag @card.image.url, class: 'Main__image'
+      - if user_signed_in? && (current_user.id == @card.user_id)
+        .Purchase__content
+          .Purchase__form
+            = form_with url: card_path(@card), method: :delete , local: true do |f|
+              = f.submit '投稿を削除', class: 'Purchase__form__btn', data: { confirm: '【確認】削除すると二度と復活できません。本当に削除しますか？' }
+            = form_with url: edit_card_url(@card.id), method: :get, local: true do |f|
+              = f.submit '投稿を編集', class: 'Purchase__form__btn'
       .book_box
         .Table
           %table
@@ -15,5 +22,5 @@
                 = @card.user.name
               %tr
                 %th レビュー
-                %td 
+                %td.long
                   =@card.text

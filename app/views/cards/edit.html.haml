@@ -1,0 +1,21 @@
+.Listing
+  .TopIcon
+  = form_for @card, method: :put, local: true do |f|
+    .Content
+      .Content__title
+        %label.Content__title__name 文書選択
+        = f.file_field :image, class: "Content__AField"
+    .Content
+      .Content__title
+        %label.Content__title__name タイトル
+        = f.text_field :title, class: "Content__AField"
+    .Content
+      .Content__title
+        %label.Content__title__name カテゴリー
+        = f.collection_select(:type_id, Type.all, :id, :name,{prompt: "選択してください"}, class: "Content__AField" )
+    .Content
+      .Content__title
+        %label.Content__title__name フリーワード
+        = f.text_area :text, class: "Content__BField"
+    .Send
+      = f.submit '登録する', class: 'Send__ABtn'

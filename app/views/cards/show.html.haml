@@ -1,15 +1,19 @@
-= image_tag @card.image.url
-.Table
-  %table
-    %tr
-      %th 出品者
-      %td
-        = @card.user.name
-      %tr
-        %th ブランド
-        %td 
-          = @card.title
-      %tr
-        %th 商品の状態
-        %td 
-          =@card.text
+.main
+  .main__zoon
+    .content
+      = image_tag @card.image.url, class: 'Main__image'
+      .book_box
+        .Table
+          %table
+            %tr
+              %th タイトル
+              %td
+                = @card.title
+            %tr
+              %th 出品者
+              %td
+                = @card.user.name
+              %tr
+                %th レビュー
+                %td 
+                  =@card.text

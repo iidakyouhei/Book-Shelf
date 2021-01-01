@@ -48,6 +48,11 @@ class CardsController < ApplicationController
       render :edit
     end
   end
+
+  def search
+    @cards = Card.search(params[:keyword])
+  end
+
   private
 
 

@@ -1,24 +1,4 @@
-
-
-
-.header
-  .header__top
-    .title
-      File-Shelf
-    .Search
-      %form.Form__contents
-        %input.Form__inputText{placeholder: "キーワードから探す", type: "search"}
-        %button.Search__btn{type: "submit"}
-          = image_tag '', class: 'Search__btn--icon'
-    .function
-
-      %ul.function__list
-        %li
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
-        %li 
-          = link_to "新規文書登録", new_card_path, class: 'Button'
-
-
+= render 'header'
 .main
   .card-display
     %ul.card-display__box
@@ -37,48 +17,59 @@
         .ProductLists
           - @cards.each do |card|
             .ProductList
-              =link_to card_path(card.id) do
-                .ProductList__body
-                  %h3.type
-                    = card.type.name
-                  %h3.name
-                    = card.title
-                  %h3.user
-                    = card.user.name
+              =link_to card_path(card.id), class: 'ProductList__body' do
+                .type
+                  = card.type.name
+                .name
+                  = card.title
+                .user
+                  = card.user.name
 
 
       #content02
         .ProductLists
           - @cards_i.each do |card|
             .ProductList
-              =link_to card_path(card.id) do
-                .ProductList__body
-                  %h3.name
-                    = card.title
+              =link_to card_path(card.id), class: 'ProductList__body' do
+                .type
+                  = card.type.name
+                .name
+                  = card.title
+                .user
+                  = card.user.name
       #content03
         .ProductLists
           - @cards_t.each do |card|
             .ProductList
-              =link_to card_path(card.id) do
-                .ProductList__body
-                  %h3.name
-                    = card.title
+              =link_to card_path(card.id), class: 'ProductList__body' do
+                .type
+                  = card.type.name
+                .name
+                  = card.title
+                .user
+                  = card.user.name
       #content04
         .ProductLists
           - @cards_p.each do |card|
             .ProductList
-              =link_to card_path(card.id) do
-                .ProductList__body
-                  %h3.name
-                    = card.title
+              =link_to card_path(card.id), class: 'ProductList__body' do
+                .type
+                  = card.type.name
+                .name
+                  = card.title
+                .user
+                  = card.user.name
       #content05
         .ProductLists
           - @cards_g.each do |card|
             .ProductList
-              =link_to card_path(card.id) do
-                .ProductList__body
-                  %h3.name
-                    = card.title
+              =link_to card_path(card.id), class: 'ProductList__body' do
+                .type
+                  = card.type.name
+                .name
+                  = card.title
+                .user
+                  = card.user.name
 
 .footer
   FileーShelf

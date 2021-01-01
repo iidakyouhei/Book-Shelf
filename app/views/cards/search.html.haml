@@ -1,0 +1,15 @@
+= render 'header'
+.main
+  %h3.title 
+    検索結果
+  .content-search
+    .ProductLists
+      - @cards.each do |card|
+        .ProductList
+          =link_to card_path(card.id), class: 'ProductList__body' do
+            .type
+              = card.type.name
+            .name
+              = card.title
+            .user
+              = card.user.name

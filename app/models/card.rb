@@ -9,4 +9,11 @@ class Card < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  def self.search(search)
+    if search != ""
+      Card.where('title LIKE(?)', "%#{search}%")
+    else
+      Card.all
+    end
+  end
 end

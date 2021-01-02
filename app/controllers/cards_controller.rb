@@ -25,7 +25,8 @@ class CardsController < ApplicationController
   def show
     @card = Card.find(params[:id])
     @user = User.find(@card.user_id)
-
+    @comment = Comment.new
+    @comments = @card.comments.includes(:user)
   end
 
   def edit

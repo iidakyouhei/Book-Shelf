@@ -1,5 +1,6 @@
-.main
+.show-main
   .main__zoon
+    = link_to 'トップページに戻る', root_path
     .content
       = image_tag @card.image.url, class: 'Main__image'
       - if user_signed_in? && (current_user.id == @card.user_id)
@@ -24,3 +25,15 @@
                 %th レビュー
                 %td.long
                   =@card.text
+        .Comment__box
+          - if user_signed_in?
+            = form_with(model: [@card, @comment], class: "New__comment", local: true, id: "new_comment") do |f| 
+              = f.text_area :text, class:"New__comment__body", rows: "2"
+              = f.submit "コメントする", class:'Comment__btn'
+            .Contents
+              -if @comments
+                - @comments.each do |comment|
+                  .CommentText
+                    = comment.user.name
+                    %p :
+                    = comment.text

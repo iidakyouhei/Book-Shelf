@@ -4,7 +4,8 @@
       .Main-AccountPage__move--title
         %p.newText  新規ユーザ登録
       .AccountPage__title
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
           .AccountPage__title--main
             .field
               = f.label :名前

@@ -1,7 +1,6 @@
 .header
   .header__top
-    .title
-      File-Shelf
+    = link_to 'File-Shelf', root_path, class:"title"
     .Search
       =form_with(url: search_cards_path, local: true, method: :get, class: "Form__contents") do |form|
         =form.text_field :keyword,placeholder: "キーワードから探す", class: "Form__inputText"

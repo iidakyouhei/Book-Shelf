@@ -13,6 +13,7 @@
     font-size: 30px;
     font-family: serif;
     color: #006400;
+    text-decoration: none;
   }
   .function{
     display: flex;
@@ -89,6 +90,7 @@
   .title{
     margin-left: 100px;
     font-size: 20px;
+    padding-top: 50px;
   }
 }
 
@@ -133,6 +135,27 @@
       .ProductList__body{
         text-decoration: none;
         color: black;
+        position: relative;
+        .type{
+          width: 150px;
+          padding-left: 10px;
+          background-color: #228b22;
+          color: white;
+        }
+        .name{
+          width: 250px;
+          padding: 10px;
+          white-space: nowrap;  
+          overflow: hidden;  
+          text-overflow: ellipsis;  
+          -webkit-text-overflow: ellipsis;  
+          -o-text-overflow: ellipsis; 
+        }
+        .user{
+          position: absolute;
+          top: 75px;
+          right: 0;
+        }
       }
 
     }
@@ -152,8 +175,28 @@
       .ProductList__body{
         text-decoration: none;
         color: black;
+        position: relative;
+        .type{
+          width: 150px;
+          padding-left: 10px;
+          background-color: #228b22;
+          color: white;
+        }
+        .name{
+          width: 250px;
+          padding: 10px;
+          white-space: nowrap;  
+          overflow: hidden;  
+          text-overflow: ellipsis;  
+          -webkit-text-overflow: ellipsis;  
+          -o-text-overflow: ellipsis; 
+        }
+        .user{
+          position: absolute;
+          top: 75px;
+          right: 0;
+        }
       }
-
     }
   }
 }

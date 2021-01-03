@@ -1,6 +1,6 @@
+= render 'header'
 .show-main
   .main__zoon
-    = link_to 'トップページに戻る', root_path
     .content
       = image_tag @card.image.url, class: 'Main__image'
       - if user_signed_in? && (current_user.id == @card.user_id)

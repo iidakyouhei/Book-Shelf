@@ -14,6 +14,7 @@ class CardsController < ApplicationController
     if @card.save
       redirect_to root_path
     else
+      flash.now[:alert] = @card.errors.full_messages
       render :new
     end
   end

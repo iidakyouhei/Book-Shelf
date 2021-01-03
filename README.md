@@ -2,49 +2,38 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique:true|
 |email|string|null: false, unique:true|
 |password|string|null: false|
 
 ### Association
-- has_many :files dependent: :destroy
-- has_many :histories dependent: :destroy
+- has_many :cards dependent: :destroy
+- has_many :comments dependent: :destroy
 
-## filesテーブル
+## cardsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|url|string|null: false|
+|user|references|null: false, foreign_key: true|
+|image|string|null: false|
 |title|string|null: false|
-|date|string|null: false|
-|type_id|integer|null: false, foreign_key: true|
+|type_id|integer|null: false|
+|text|text||
 
 
 ### Association
-- has_many :histories dependent: :destroy
+- has_many :comments dependent: :destroy
 - belongs_to :user
-- has_many :freeTags dependent: :destroy
 - belongs_to_active_hash :type
 
-## historiesテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|file_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|card_id|references|null: false, foreign_key: true|
+|text|text||
 
 ### Association
 - belongs_to :user
-- belongs_to :file
-
-## freeTagsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|file_id|references|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :file
-- belongs_to_active_hash :tag
+- belongs_to :card

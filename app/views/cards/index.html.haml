@@ -29,7 +29,7 @@
 
       #content02
         .ProductLists
-          - @cards_i.each do |card|
+          - @cards_p.each do |card|
             .ProductList
               =link_to card_path(card.id), class: 'ProductList__body' do
                 .type
@@ -41,7 +41,7 @@
                   = card.user.name
       #content03
         .ProductLists
-          - @cards_t.each do |card|
+          - @cards_i.each do |card|
             .ProductList
               =link_to card_path(card.id), class: 'ProductList__body' do
                 .type
@@ -53,7 +53,7 @@
                   = card.user.name
       #content04
         .ProductLists
-          - @cards_p.each do |card|
+          - @cards_t.each do |card|
             .ProductList
               =link_to card_path(card.id), class: 'ProductList__body' do
                 .type

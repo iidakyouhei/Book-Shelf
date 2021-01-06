@@ -9,7 +9,7 @@ URL:https://file-shelf.herokuapp.com/
 - パスワード: pas123
 
 ## 制作背景
-本を読む上でやりたいことしていることを
+本を読む上でやりたいこと、していることを
 １つに合わせたサイトを作成したかった。
 
 - 読んだ本の内容をメモしておきたい
@@ -22,13 +22,14 @@ URL:https://file-shelf.herokuapp.com/
 ## 使用技術
 - Rails on Rails
 - Ruby
-- haml
+- haml/html
 - scss
 - jquery
 - heroku
+- AWS(S3)
 
 ## 今後実装したい機能
-- 閲覧するや評価をできる機能の実装
+- 閲覧する数や評価をできる機能の実装
 
 ## usersテーブル
 
